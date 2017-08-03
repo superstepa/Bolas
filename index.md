@@ -1,37 +1,30 @@
-## Welcome to GitHub Pages
+# Bolas
 
-You can use the [editor on GitHub](https://github.com/superstepa/Bolas/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+Bolas is a mtg card-fetcher discord bot that is heavily inspired by [yawgmoth](https://github.com/Lerker3/yawgmoth). I am using this project as a way to try out some new approaches to api wrappers and plugin systems, so the way some parts of the bot are implemented are a bit esoteric.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## Structure
 
-### Markdown
+The core of the bot is located in bot.py, all simple commands such as !pingme should go in commands.py. More advanced functionality such as the card fetcher should be developed in card_hooks.py. Those files contain the base class that the plugins should be derived from.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+The plugins are loaded through a metaclass called PluginMount. Every class derived from PluginMount will be automatically loaded and added to either the self.chat_hook or self.commands variables.
 
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
+The docstring for each one of the plugins are all concatenated together and can be displayed with the hardcoded “!help” command.
 
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
-### Jekyll Themes
+## Example run file
+```python
+from src import bot
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/superstepa/Bolas/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+token = ""
+# Assuming that the file just contains the token and nothing else
+with open("secret_token.txt") as f:
+    token = f.read()
 
-### Support or Contact
+bot = bot.Bolas(token)
+bot.run(bot.token)
+```
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+## Add Bolas to your Discord server
+
+[Click here](https://discordapp.com/oauth2/authorize?client_id=245372541915365377&scope=bot&permissions=0)
