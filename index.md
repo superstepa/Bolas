@@ -10,8 +10,6 @@ The plugins are loaded through a metaclass called PluginMount. Every class deriv
 
 The docstring for each one of the plugins are all concatenated together and can be displayed with the hardcoded “!help” command.
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
 ## Example run file
 ```python
 from src import bot
