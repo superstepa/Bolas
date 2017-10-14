@@ -23,6 +23,10 @@ bot = bot.Bolas(token)
 bot.run(bot.token)
 ```
 
+## Stats
+
+Fetching cards for 43 servers and 2855 users as of October 2017.
+
 ## Add Bolas to your Discord server
 
 [Click here](https://discordapp.com/oauth2/authorize?client_id=245372541915365377&scope=bot&permissions=0)
