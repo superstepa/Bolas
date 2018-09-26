@@ -25,7 +25,7 @@ bot.run(bot.token)
 
 ## Stats
 
-Fetching cards for 152 servers and 14556 users as of December 2017.
+Fetching cards for 152 servers and 14556 users as of September 2018.
 
 ## Add Bolas to your Discord server
 
