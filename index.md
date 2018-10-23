@@ -10,22 +10,15 @@ The plugins are loaded through a metaclass called PluginMount. Every class deriv
 
 The docstring for each one of the plugins are all concatenated together and can be displayed with the hardcoded “!help” command.
 
-## Example run file
-```python
-from src import bot
+## How to run
 
-token = ""
-# Assuming that the file just contains the token and nothing else
-with open("secret_token.txt") as f:
-    token = f.read()
+Export BOLAS_SECRET_TOKEN. Execute run.py.
 
-bot = bot.Bolas(token)
-bot.run(bot.token)
-```
+[Example run.sh](./misc/run.sh)
 
 ## Stats
 
-Fetching cards for 152 servers and 14556 users as of September 2018.
+Fetching cards for 152 servers and 15122 users (9151 unique users) as of September 2018.
 
 ## Add Bolas to your Discord server
 
