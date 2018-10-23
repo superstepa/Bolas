@@ -14,7 +14,16 @@ The docstring for each one of the plugins are all concatenated together and can 
 
 Export BOLAS_SECRET_TOKEN. Execute run.py.
 
-[Example run.sh](./misc/run.sh)
+```sh
+#!/usr/bin/env bash
+export BOLASDIR=/home/bolas/bolas
+export $BOLAS_SECRET_TOKEN=THIS-IS-A-SECRET
+
+cd $BOLASDIR
+source $BOLASDIR/bin/activate
+pgrep -f run.py || python $BOLASDIR/run.py
+
+```
 
 ## Stats
 
